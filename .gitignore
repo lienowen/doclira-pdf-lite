@@ -5,7 +5,6 @@ __pycache__/
 .vscode/
 build/
 dist/
-*.spec
+release_build/
 .pytest_cache/
 output/
-

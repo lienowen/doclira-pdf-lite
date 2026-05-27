@@ -8,6 +8,17 @@ Doclira PDF Lite is a small desktop application for everyday page-level PDF work
 It is deliberately focused: useful enough for simple tasks, while advanced business
 workflows remain in the commercial Doclira PDF Pro edition.
 
+## Download for Windows
+
+Download the latest free Windows installer from
+[GitHub Releases](https://github.com/lienowen/doclira-pdf-lite/releases/latest).
+
+```text
+DocliraPDF_Lite_Setup_v0.1.0_Windows_x64.exe
+```
+
+Lite does not require a paid license or activation key.
+
 ## Included In Lite
 
 - Open and preview a PDF locally
@@ -45,6 +56,20 @@ py -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
 .\.venv\Scripts\python run.py
 ```
+
+## Build The Windows Installer
+
+The installer build is intentionally part of this public Lite repository:
+
+```powershell
+py -m venv .venv
+.\.venv\Scripts\python -m pip install -r dev-requirements.txt
+winget install --id NSIS.NSIS -e
+.\build_windows.ps1
+```
+
+The generated installer is written to `release_build/` and is distributed
+through GitHub Releases rather than committed into the source history.
 
 ## Privacy
 

@@ -3,7 +3,7 @@ from pathlib import Path
 
 import fitz
 from PySide6.QtCore import Qt
-from PySide6.QtGui import QAction, QImage, QPixmap
+from PySide6.QtGui import QAction, QIcon, QImage, QPixmap
 from PySide6.QtWidgets import (
     QApplication,
     QFileDialog,
@@ -25,12 +25,21 @@ from PySide6.QtWidgets import (
 from .pdf_ops import add_basic_watermark, delete_page, merge_pdfs, rotate_page, split_pdf
 
 
+def application_icon_path():
+    bundled = getattr(sys, "_MEIPASS", None)
+    base = Path(bundled) if bundled else Path(__file__).resolve().parents[1]
+    return base / "assets" / "doclira_lite.ico"
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         self.path = None
         self.document = None
         self.setWindowTitle("Doclira PDF Lite")
+        icon_path = application_icon_path()
+        if icon_path.exists():
+            self.setWindowIcon(QIcon(str(icon_path)))
         self.resize(1240, 800)
         self._build_toolbar()
         self._build_content()
@@ -200,7 +209,12 @@ class MainWindow(QMainWindow):
 def main():
     application = QApplication(sys.argv)
     application.setApplicationName("Doclira PDF Lite")
+    icon_path = application_icon_path()
+    if icon_path.exists():
+        application.setWindowIcon(QIcon(str(icon_path)))
     window = MainWindow()
+    if "--smoke-test" in sys.argv:
+        window.close()
+        return
     window.show()
     sys.exit(application.exec())
-
