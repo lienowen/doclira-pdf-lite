@@ -1,9 +1,15 @@
-# Security
+# Security and Privacy Reports
 
-Doclira PDF Lite performs PDF operations locally. Please do not submit private
-PDF documents, confidential screenshots or paid product license information in
-public GitHub issues.
+Doclira PDF performs its core PDF processing locally on the customer's Windows computer.
 
-For security-sensitive reports, contact Doclira through the support channel
-listed on [www.doclira.com](https://www.doclira.com/).
+## Reporting a Problem
 
+For a security, privacy, purchase or activation concern, contact [lienowen@outlook.com](mailto:lienowen@outlook.com) instead of opening a public issue with sensitive details.
+
+Please do not publish:
+
+- License keys or activation delivery records
+- Private PDF documents or customer data
+- Download links intended for paying customers
+
+For an ordinary functional bug that contains no sensitive material, use the bug report form in this repository.

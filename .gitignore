@@ -1,10 +1,6 @@
-__pycache__/
-*.py[cod]
-.venv/
-.idea/
-.vscode/
-build/
-dist/
-release_build/
-.pytest_cache/
-output/
+.DS_Store
+Thumbs.db
+*.exe
+*.zip
+*license_keys*
+*activation*

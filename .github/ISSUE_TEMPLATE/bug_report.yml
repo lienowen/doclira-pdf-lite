@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a reproducible problem in Doclira PDF
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Doclira PDF. Remove private document content and never post a license key.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      placeholder: e.g. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Windows version
+      options:
+        - Windows 11 64-bit
+        - Windows 10 64-bit
+        - Other / unsupported
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Describe the action, chosen tool and output behavior.
+      placeholder: "1. Add a PDF...\n2. Choose...\n3. Observe..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or non-sensitive sample details
+      description: Redact personal content, confidential documents and activation keys first.
